@@ -518,6 +518,34 @@ importers:
         specifier: ^4.3.0
         version: 4.3.0
 
+  packages/joyid:
+    dependencies:
+      '@ckb-lumos/base':
+        specifier: 0.22.2
+        version: link:../base
+      '@ckb-lumos/codec':
+        specifier: 0.22.2
+        version: link:../codec
+      '@ckb-lumos/common-scripts':
+        specifier: 0.22.2
+        version: link:../common-scripts
+      '@ckb-lumos/config-manager':
+        specifier: 0.22.2
+        version: link:../config-manager
+      '@ckb-lumos/helpers':
+        specifier: 0.22.2
+        version: link:../helpers
+      '@joyid/ckb':
+        specifier: 0.0.6
+        version: 0.0.6
+    devDependencies:
+      '@ckb-lumos/bi':
+        specifier: 0.22.2
+        version: link:../bi
+      sinon:
+        specifier: ^15.0.4
+        version: 15.0.4
+
   packages/light-client:
     dependencies:
       '@ckb-lumos/base':
@@ -5163,6 +5191,10 @@ packages:
       '@types/node': 20.9.0
       '@types/yargs': 17.0.24
       chalk: 4.1.2
+
+  /@joyid/ckb@0.0.6:
+    resolution: {integrity: sha512-V7SfcWJ3hWrbxibHkRYxd7rXViLLJYSxuDg2/KQikEQMPYHW/FtFLO8EWNOa8a/rMBjJ7EhYKcUxiGAAq8ecRQ==}
+    dev: false
 
   /@jridgewell/gen-mapping@0.3.3:
     resolution: {integrity: sha512-HLhSWOLRi875zjjMG/r+Nv0oCW8umGb0BgEhyX3dDX3egwZtB8PqLnjz3yedt8R5StBrzcg4aBpnh8UA9D1BoQ==}
