@@ -13,7 +13,7 @@ const CHAR_f = "f".charCodeAt(0); // 102
 
 function assertStartsWith0x(str: string): void {
   if (!str || !str.startsWith("0x")) {
-    throw new Error("Invalid hex string");
+    throw new Error("Invalid hex string, expect starts with 0x");
   }
 }
 
@@ -79,6 +79,7 @@ export function assertHexString(str: string, byteLength?: number): void {
 export function assertUtf8String(str: string): void {
   for (let i = 0; i < str.length; i++) {
     const c = str.charCodeAt(i);
+    /* eslint-disable @typescript-eslint/no-magic-numbers */
     if (c > 0xff) {
       throw new Error("Invalid UTF-8 raw string!");
     }
