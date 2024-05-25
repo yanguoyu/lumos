@@ -65,6 +65,9 @@ const config = {
       name: "node-polyfill",
       configureWebpack() {
         return {
+          module: {
+            rules: [{ test: /\.m?js/, resolve: { fullySpecified: false } }],
+          },
           resolve: {
             fallback: {
               crypto: require.resolve("crypto-browserify"),
@@ -74,7 +77,10 @@ const config = {
               stream: false,
             },
           },
-          plugins: [new webpack.ProvidePlugin({ Buffer: ["buffer", "Buffer"] })],
+          plugins: [
+            new webpack.ProvidePlugin({ Buffer: ["buffer", "Buffer"] }),
+            new webpack.ProvidePlugin({ process: "process/browser" }),
+          ],
         }
       },
     }),
